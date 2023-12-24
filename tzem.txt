@@ -1,0 +1,90 @@
+Тестовое задание SQl:
+
+a) INSERT INTO
+b) JOIN
+d) DROP
+c) Количество заказов для каждого продукта в базе данных
+a) ALTER TABLE
+a) База данных, в которой данные хранятся в виде двумерных таблиц, связанных между собой
+b) SELECT * from Orders
+d) Все вышеперечисленные варианты
+c) WHERE
+a) ORDER BY ASC
+
+Кейс:
+
+Диаграмма классов:
+
+Классы: User, HotelOwner, Hotel, Room, Booking, Payment, Admin, Country, City.
+Отношения: User может иметь несколько Booking, HotelOwner может иметь несколько Hotel и т.д.
+
+
+Диаграмма последовательностей:
+
+Пользователь отправляет запрос на поиск отелей.
+Система возвращает список отелей.
+Пользователь выбирает отель и отправляет запрос на бронирование.
+Система подтверждает бронирование и создает запись в базе данных.
+
+ER-диаграмма:
+
+Сущности: User, HotelOwner, Hotel, Room, Booking, Payment, Admin, Country, City.
+Связи: User может иметь несколько Booking, HotelOwner может иметь несколько Hotel и т.д.
+Атрибуты: Например, в сущности Booking может быть атрибут "payment_status".
+API (REST):
+
+Получение списка отелей:
+
+Endpoint: /hotels
+Метод: GET
+Пример запроса: GET /hotels?country=USA&city=NewYork
+Пример ответа(json):
+
+{
+  "hotels": [
+    {"id": 1, "name": "Hotel A", "city": "New York", "country": "USA"},
+    {"id": 2, "name": "Hotel B", "city": "Los Angeles", "country": "USA"}
+  ]
+}
+
+Бронирование номера:
+
+Endpoint: /bookings
+Метод: POST
+Пример запроса(json):
+POST /bookings
+{
+  "user_id": 123,
+  "hotel_id": 1,
+  "room_number": 101,
+  "payment_method": "credit_card",
+  "prepaid": true
+}
+
+Пример ответа(json):
+{
+  "booking_id": 456,
+  "status": "confirmed",
+  "total_price": 150.00
+}
+
+Отчетность:
+Endpoint: /reports
+Метод: GET
+Пример запроса: GET /reports?start_date=2023-01-01&end_date=2023-12-31
+
+Пример ответа(json):
+{
+  "total_bookings": 1000,
+  "total_revenue": 50000.00,
+  "average_booking_price": 50.00
+}
+
+Описание работы команды:
+
+Команда должна быть многофункциональной, включая разработчиков, тестировщиков, аналитиков и дизайнеров.
+Использование методологии разработки, такой как Scrum или Kanban.
+Регулярные совещания, стендапы и ретроспективы.
+Использование системы контроля версий, например, Git.
+Тестирование кода, включая юнит-тестирование и автоматизированное тестирование.
+Регулярные обновления документации.
